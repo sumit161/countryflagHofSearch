@@ -8,15 +8,15 @@ cl(MessegeInfo)
 
 // cl(countries.filter(ele => ele.capital))
 const onkeyupSearchBox = (eve) => {
-    const userString = eve.target.value;
+    const userString = eve.target.value.toLowerCase();
     eve.target.style.border = "2px solid orange";
     cl(userString)
-    let searchname = countries.filter(ele => ele.name.toLowerCase().trim().includes(userString).toLowerCase());
-    let searchCapital = countries.filter(ele => ele.capital).filter(ele => ele.capital.toLowerCase().trim().includes(userString.toLowerCase()))
-    let searchLanguages = countries.filter(ele => ele.languages.join(",").toLowerCase().trim().includes(userString.toLowerCase()))
+  
+    let searchname = countries.filter(ele => ele.name.toLowerCase().trim().includes(userString));
+    let searchCapital = countries.filter(ele => ele.capital).filter(ele => ele.capital.toLowerCase().trim().includes(userString))
+    let searchLanguages = countries.filter(ele => ele.languages.join(",").toLowerCase().trim().includes(userString))
     let AddDuplicatesArray = searchLanguages.concat(searchname).concat(searchCapital)
     let CapitalAchive = [...new Set(AddDuplicatesArray)]
-
     if (userString.length > 0) {
         MessegeInfo.classList.remove("invisible")
 
