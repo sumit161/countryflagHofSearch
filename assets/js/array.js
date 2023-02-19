@@ -14,6 +14,9 @@ const onkeyupSearchBox = (eve) => {
     let searchname = countries.filter(ele => ele.name.toLowerCase().trim().includes(userString));
     let searchCapital = countries.filter(ele => ele.capital).filter(ele => ele.capital.toLowerCase().trim().includes(userString))
     let searchLanguages = countries.filter(ele => ele.languages.join(",").toLowerCase().trim().includes(userString))
+    let searchname = countries.filter(ele => ele.name.toLowerCase().trim().includes(userString).toLowerCase());
+    let searchCapital = countries.filter(ele => ele.capital).filter(ele => ele.capital.toLowerCase().trim().includes(userString.toLowerCase()))
+    let searchLanguages = countries.filter(ele => ele.languages.join(",").toLowerCase().trim().includes(userString.toLowerCase()))
     let AddDuplicatesArray = searchLanguages.concat(searchname).concat(searchCapital)
     let CapitalAchive = [...new Set(AddDuplicatesArray)]
 
