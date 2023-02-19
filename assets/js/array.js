@@ -11,9 +11,6 @@ const onkeyupSearchBox = (eve) => {
     const userString = eve.target.value;
     eve.target.style.border = "2px solid orange";
     cl(userString)
-    let searchname = countries.filter(ele => ele.name.toLowerCase().trim().includes(userString));
-    let searchCapital = countries.filter(ele => ele.capital).filter(ele => ele.capital.toLowerCase().trim().includes(userString))
-    let searchLanguages = countries.filter(ele => ele.languages.join(",").toLowerCase().trim().includes(userString))
     let searchname = countries.filter(ele => ele.name.toLowerCase().trim().includes(userString).toLowerCase());
     let searchCapital = countries.filter(ele => ele.capital).filter(ele => ele.capital.toLowerCase().trim().includes(userString.toLowerCase()))
     let searchLanguages = countries.filter(ele => ele.languages.join(",").toLowerCase().trim().includes(userString.toLowerCase()))
